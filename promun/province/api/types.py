@@ -10,6 +10,7 @@ class ProvinceType(DjangoObjectType):
             'id',
             'name',
             'slug',
+            'towns'
         )
 
 

@@ -26,7 +26,7 @@ class Province(SlugifyModel):
 
 
 class Town(SlugifyModel):
-    province = models.ForeignKey(to='Province', on_delete=models.CASCADE, related_name='provincias')
+    province = models.ForeignKey(to='Province', on_delete=models.CASCADE, related_name='towns')
 
     class Meta:
         verbose_name = 'Municipio'
