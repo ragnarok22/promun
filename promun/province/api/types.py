@@ -23,6 +23,6 @@ class TownType(DjangoObjectType):
         )
 
 
-user_types = [
+province_types = [
     ProvinceType, TownType
 ]

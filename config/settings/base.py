@@ -43,16 +43,22 @@ def get_env_variable(var_name):
 
 
 # Application definition
-
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+THIRD_PARTY_APPS = [
+    'graphene_django',
+]
+LOCAL_APPS = [
     'promun.province.apps.ProvinceConfig',
 ]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,3 +147,10 @@ LANGUAGES = [
     ('es', 'Spanish'),
     ('en', 'English'),
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'promun.core.schema.schema',
+    'MIDDLEWARE': [
+        # 'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
+}
