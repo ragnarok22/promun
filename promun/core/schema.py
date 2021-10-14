@@ -10,12 +10,12 @@ class Query(ProvinceQuery, ObjectType):
     pass
 
 
-class Mutation(ObjectType):
+class Mutation(ProvinceMutation, ObjectType):
     pass
 
 
 schema = graphene.Schema(
     types=types,
     query=Query,
-    # mutation=Mutation
+    mutation=Mutation
 )
